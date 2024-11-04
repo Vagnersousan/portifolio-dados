@@ -1,2 +1,2 @@
 Sejam bem-vindos! 
-Esse Repositório foi criado para receber os dados do meu portifólio de dados
+Esse Repositório foi criado para receber o meu portifólio de dados.
