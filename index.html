@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagner Sousa - Analista de Dados</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --background: #0F172A;
+            --surface: #1E293B;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --accent: #22D3EE;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .hero-section {
+            background: linear-gradient(to right, #0F172A, #1E293B);
+            padding: 120px 0 80px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .skill-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .timeline-item {
+            border-left: 2px solid var(--primary);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            position: absolute;
+            left: -7px;
+            top: 0;
+            border-radius: 50%;
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--surface);
+            color: var(--text);
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .progress {
+            height: 8px;
+            background: rgba(148, 163, 184, 0.1);
+            border-radius: 4px;
+        }
+        .progress-bar {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 4px;
+        }
+        .nav-link {
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        h1, h2, h3, h4, h5 {
+            color: var(--text);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-gradient fw-bold" href="#">VS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contatos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <img src="imagens/Foto.jpg" alt="Vagner Sousa" class="profile-image mb-4">
+            <h1 class="display-4 fw-bold mb-3 text-gradient">Vagner Sousa dos Santos</h1>
+            <h2 class="fs-4 fw-light mb-5">Analista de Dados Júnior</h2>
+        </div>
+    </section>
+    <!-- Sobre Section -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="mb-4">Sobre</h2>
+            <p>
+              Sejam bem-vindos ao meu portifólio! <br> Sou um Profissional com mais de 06 anos de experiência na área de TI em transição de carreira, atualmente cursando dupla diplomação em Análise de Dados e Ciência de Dados. Possuo habilidades em análise de dados, desenvolvimento de dashboards e gestão de projetos. Proativo, com forte capacidade analítica e foco em resultados.
+            </p>
+        </div>
+    </section>
+    <!-- Experiência Section -->
+    <section id="experiencia" class="section">
+        <div class="container">
+            <h2 class="mb-4">Experiência</h2>
+            <div class="row">
+                <div class="col-md-6 timeline-item">
+                    <h3 class="mb-3">Estagiário de Análise de dados no setor de Change & Assurance IT, TIM S/A</h3>
+                    <p class="mb-2">Dezembro 2023 – Atual</p>
+                    <ul>
+                        <li>Realizo auditoria SOX e qualidade, revisando tarefas fechadas.</li>
+                        <li>Higienizo base de dados utilizando técnicas de ETL.</li>
+                        <li>apoio utilizando técnicas de Analytics, como por exemplo, a analise exploratória, Analise Unidimensional e Bidimensional, técnicas estatísticas como information Value ou correlação de Pearson, para tomada de decisão.</li>
+                        <li>Apoio no desenvolvimento de dashboards em Power BI para acompanhamento de métricas.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 timeline-item">
+                    <h3 class="mb-3">Analista de Sistemas, 200DEV Consultoria de TI</h3>
+                    <p class="mb-2">Agosto 2022 - Dezembro 2022</p>
+                    <ul>
+                        <li>Sustentei sistema bancário especializado em empréstimo consignado.</li>
+                        <li>Gestionei incidentes via Service Desk Manager (SDM).</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 timeline-item">
+                    <h3 class="mb-3">Analista de Qualidade de Software Pleno, Sinqia S/A</h3>
+                    <p class="mb-2">Setembro 2021 - Agosto 2022</p>
+                    <ul>
+                        <li>Efetuei contato direto com clientes para levantamento de requisitos.</li>
+                        <li>Realizei testes de performance e persistência no sistema PIX.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Habilidades Section -->
+    <section id="habilidades" class="section">
+        <div class="container">
+            <h2 class="mb-4">Habilidades</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-3">Metodologias Ágeis</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">SCRUM</span>
+                        <span class="skill-badge">Six Sigma</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mb-3">Ferramentas de Visualização</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Excel Intermediário</span>
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Power Point</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h3 class="mb-3">Sistemas Operacionais</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Linux (Red Hat, Fedora)</span>
+                        <span class="skill-badge">Windows</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mb-3">Banco de Dados</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">SQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Cursos Complementares Section -->
+     <section id="Cursos Complementares" class="section">
+        <div class="container">
+            <h2 class="mb-4">Cursos Complementares</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-3">Em Andamento</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Gerando Valores com dados da Preditiva Analytics</span>
+                        <span class="skill-badge">Preparatório para Certificação Azure DP-900</span>
+                        <span class="skill-badge">Cloud AWS Fundamentals</span>
+                        <span class="skill-badge">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projetos Section -->
+    <section id="projetos" class="section">
+        <div class="container">
+            <h2 class="mb-4">Projetos</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome do Projeto 1</h5>
+                            <p class="card-text">Descrição do projeto 1.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome do Projeto 2</h5>
+                            <p class="card-text">Descrição do projeto 2.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome do Projeto 3</h5>
+                            <p class="card-text">Descrição do projeto 3.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contato Section -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2 class="mb-4">Contatos</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li>
+                            <i class="fas fa-phone-alt"></i> <a>(11) 97786-8016</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i> <a href="mailto:vagnersousan@hotmail.com">vagnersousan@hotmail.com</a>
+                        </li>
+                    </ul>
+                
+                    <div class="social-icons">
+                        <a href="https://linkedin.com/in/vagner-sousa-dos-santos-a9322765" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Vagnersousan/" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
