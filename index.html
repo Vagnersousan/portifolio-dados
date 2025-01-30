@@ -39,6 +39,7 @@
             border-radius: 50%;
             border: 4px solid var(--primary);
             box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
         }
         .image-project {
             width: 200px;
@@ -80,6 +81,7 @@
             display: inline-block;
             margin: 5px;
             transition: all 0.3s ease;
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
         }
         .skill-badge:hover {
             background: var(--primary);
@@ -246,24 +248,24 @@
             </div>
         </div>
     </section>
-    <!-- Habilidades Section -->
-    <section id="habilidades" class="section">
+      <!-- Habilidades Section -->
+      <section id="habilidades" class="section">
         <div class="container">
             <h2 class="mb-4">Habilidades</h2>
             <div class="row">
                 <div class="col-md-6">
                     <h3 class="mb-3">Metodologias Ágeis</h3>
                     <div class="skill-badges">
-                        <span class="skill-badge">SCRUM</span>
-                        <span class="skill-badge">Six Sigma</span>
+                        <span class="skill-badge" data-skill-name="SCRUM" data-skill-level="100">SCRUM Fundamentals</span>
+                        <span class="skill-badge" data-skill-name="Six Sigma" data-skill-level="100">Lean Six Sigma Fundamentals</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h3 class="mb-3">Ferramentas de Visualização</h3>
                     <div class="skill-badges">
-                        <span class="skill-badge">Excel Intermediário</span>
-                        <span class="skill-badge">Power BI</span>
-                        <span class="skill-badge">Power Point Intermediário</span>
+                        <span class="skill-badge" data-skill-name="Excel Intermediário" data-skill-level="70">Excel</span>
+                        <span class="skill-badge" data-skill-name="Power BI" data-skill-level="40">Power BI</span>
+                        <span class="skill-badge" data-skill-name="Power Point " data-skill-level="70">Power Point</span>
                     </div>
                 </div>
             </div>
@@ -271,35 +273,44 @@
                 <div class="col-md-6">
                     <h3 class="mb-3">Sistemas Operacionais</h3>
                     <div class="skill-badges">
-                        <span class="skill-badge">Linux (Red Hat, Fedora)</span>
-                        <span class="skill-badge">Windows</span>
+                        <span class="skill-badge" data-skill-name="Linux (Red Hat, Fedora)" data-skill-level="40">Linux (Red Hat, Fedora)</span>
+                        <span class="skill-badge" data-skill-name="Windows" data-skill-level="90">Windows</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h3 class="mb-3">Banco de Dados</h3>
                     <div class="skill-badges">
-                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge" data-skill-name="SQL" data-skill-level="40">SQL</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Barras de progresso -->
+            <div id='progress-bars' style='margin-top:20px;'></div>
+
         </div>
     </section>
-     <!-- Cursos Complementares Section -->
-     <section id="Cursos Complementares" class="section">
-        <div class="container">
-            <h2 class="mb-4">Cursos Complementares</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3 class="mb-3">Em Andamento</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Gerando Valores com dados da Preditiva Analytics</span>
-                        <span class="skill-badge">Preparatório para Certificação Azure DP-900</span>
-                        <span class="skill-badge">Cloud AWS Fundamentals</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-                </div>
+
+    <!-- Cursos Complementares Section -->
+    <section id='Cursos Complementares' class='section'>
+        <div class='container'>
+            <h2 class='mb-4'>Cursos Complementares</h2>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <h3 class='mb-3'>Em Andamento</h3>
+                    <div class='skill-badges'>
+                        <span class='skill-badge' data-course-name='Gerando Valores com dados da Preditiva Analytics' data-course-level='40'>Gerando Valores com dados da Preditiva Analytics</span>
+                        <span class='skill-badge' data-course-name='Preparatório para Certificação Azure DP-900' data-course-level='30'>Preparatório para Certificação Azure DP-900</span>
+                        <span class='skill-badge' data-course-name='Cloud AWS Fundamentals' data-course-level='20'>Cloud AWS Fundamentals</span>
+                        <span class='skill-badge' data-course-name='Python' data-course-level='20'>Python</span> 
+                    </div> 
+                </div> 
             </div>
-        </div>
+
+            <!-- Barras de progresso -->
+            <div id='course-progress-bars' style='margin-top:20px;'></div>
+
+        </div> 
     </section>
     <!-- Projetos Section -->
     <section id="projetos" class="section">
@@ -362,6 +373,50 @@
             </div>
         </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+        <!-- Script para mostrar as barras de progresso -->
+    <script> 
+        $(document).ready(function() { 
+            $('.skill-badge').on('click', function() { 
+                const skillName = $(this).data('skill-name') || $(this).data('course-name');
+                const skillLevel = $(this).data('skill-level') || $(this).data('course-level');
+
+                // Cria a barra de progresso
+                const progressBar = `
+                    <div style='margin-bottom:15px;'>
+                        <label>${skillName}</label> 
+                        <div style='height:20px;'class='progress'> 
+                            <div 
+                                class='progress-bar' 
+                                role='progressbar' 
+                                style='width:${skillLevel}%;' 
+                                aria-valuenow='${skillLevel}' 
+                                aria-valuemin='0' 
+                                aria-valuemax='100'> 
+                                ${skillLevel}% 
+                            </div> 
+                        </div> 
+                    </div>`;
+                
+                // Adiciona a barra de progresso na seção correspondente
+                if ($(this).data('course-name')) {
+                    $('#course-progress-bars').append(progressBar);
+                } else {
+                    $('#progress-bars').append(progressBar);
+                }
+
+                // Limpa a barra após um tempo (5 segundos)
+                setTimeout(() => {
+                    if ($(this).data('course-name')) {
+                        $('#course-progress-bars').find(`label:contains('${$(this).data('course-name')}')`).closest('div').remove();
+                    } else {
+                        $('#progress-bars').find(`label:contains('${$(this).data('skill-name')}')`).closest('div').remove();
+                    }
+                }, 5000); // Remove após 5 segundos
+            });
+        });
+    </script>
+
 </body>
 </html>
