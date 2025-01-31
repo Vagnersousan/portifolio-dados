@@ -164,10 +164,21 @@
         h1.display-4 {
             line-height: 1.3; /* Ajuste conforme necessário */
         }
+        .rounded-card {
+            border-radius: 15px; /* Arredonda os cantos do card */
+            overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do card */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+        }
+
+        .rounded-image {
+            border-radius: 10px; /* Arredonda as bordas da imagem */
+            width: 100%; /* Faz a imagem ocupar toda a largura do card */
+            height: auto; /* Mantém a proporção da imagem */
+        }
     </style>
 </head>
 <body>
-     <!-- Navbar -->
+    <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand text-gradient fw-bold" href="#" id="navbarLogo">VS</a>
@@ -344,16 +355,16 @@
 
         </div> 
     </section>
-       <!-- Projetos Section -->
+   <!-- Projetos Section -->
 <section id="projetos" class="section">
     <div class="container">
         <h2 class="mb-4">Projetos</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 rounded-card">
                     <div class="card-body">
                         <h5 class="card-title">Churn de Funcionários</h5>
-                        <img src="https://imgur.com/5WuKBBm.jpg" alt="Vagner Sousa" class="image-project mb-1">
+                        <img src="https://imgur.com/5WuKBBm.jpg" alt="Vagner Sousa" class="image-project mb-1 rounded-image">
                         <p class="card-text">Descrição do projeto 1.</p>
                         <!-- Botão modificado -->
                         <a href="#" class="btn skill-badge">Ver mais</a>
@@ -361,10 +372,10 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 rounded-card">
                     <div class="card-body">
                         <h5 class="card-title">Nome do Projeto 2</h5>
-                        <img src="https://imgur.com/5WuKBBm.jpg" alt="Vagner Sousa" class="image-project mb-1">
+                        <img src="https://imgur.com/5WuKBBm.jpg" alt="Vagner Sousa" class="image-project mb-1 rounded-image">
                         <p class="card-text">Descrição do projeto 2.</p>
                         <!-- Botão modificado -->
                         <a href="#" class="btn skill-badge">Ver mais</a>
@@ -372,10 +383,10 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 rounded-card">
                     <div class="card-body">
                         <h5 class="card-title">Nome do Projeto 3</h5>
-                        <img src="https://imgur.com/5WuKBBm.jpg" alt="Vagner Sousa" class="image-project mb-1">
+                        <img src="https://imgur.com/5WuKBBm.jpg" alt="Vagner Sousa" class="image-project mb-1 rounded-image">
                         <p class="card-text">Descrição do projeto 3.</p>
                         <!-- Botão modificado -->
                         <a href="#" class="btn skill-badge">Ver mais</a>
