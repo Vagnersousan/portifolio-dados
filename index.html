@@ -172,6 +172,14 @@
             </div>
         </div>
     </nav>
+    <script>
+        $(document).ready(function() {
+            // Fecha o menu ao clicar em qualquer link
+            $('.navbar-nav .nav-link').on('click', function() {
+                $('.navbar-collapse').collapse('hide'); // Fecha o menu
+            });
+        });
+    </script>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container text-center">
